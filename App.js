@@ -1,22 +1,48 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Image } from 'react-native';
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text, Card, CardItem, Form, Item, Input } from 'native-base';
 
-export default class App extends React.Component {
+export default class AnatomyExample extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Byteshop!!!</Text>
-        <Text>This is our front end app!</Text>
-      </View>
+      <Container>
+        <Header>
+          <Left>
+            <Button transparent>
+              <Icon name='menu' />
+            </Button>
+          </Left>
+          <Body>
+            <Title>ByteShop</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content>
+        <Card>
+          <CardItem>
+            <Image source={require('./img/carts.jpg')} style={{height: 200, width: null, flex: 1, borderRadius: 7}} />
+          </CardItem>
+        </Card>
+        <Form>
+          <Item>
+            <Input placeholder="Username" />
+          </Item>
+          <Item last>
+            <Input placeholder="Password" />
+          </Item>
+          <Button block success style={{margin: 20}}>
+            <Text>Log In</Text>
+          </Button>
+        </Form>
+        </Content>
+        <Footer>
+          <FooterTab>
+            <Button full>
+              <Text>Sign Up</Text>
+            </Button>
+          </FooterTab>
+        </Footer>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
