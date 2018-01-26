@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image } from 'react-native';
-import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text, Card, CardItem, Form, Item, Input } from 'native-base';
+import { Content, Button, Text, Card, CardItem, Form, Item, Input } from 'native-base';
 
 export default class UserRegistration extends Component {
   constructor(props) {
