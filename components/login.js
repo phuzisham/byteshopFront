@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import { Image } from 'react-native';
 import { Button, Text, Form, Item, Input, View } from 'native-base';
 
-export default class Registration extends Component {
+export default class Login extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: '',
       email: '',
       password: ''
     }
@@ -16,14 +15,13 @@ export default class Registration extends Component {
   registerUser = () => {
     console.log('this.state =>', this.state);
 
-    fetch('http://172.31.99.115:3000/api/auth', {
+    fetch('http://192.168.1.111:3000/api/auth/sign_in', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name: this.state.name,
         email: this.state.email,
         password: this.state.password
       })
@@ -48,16 +46,13 @@ export default class Registration extends Component {
 
         <Form>
           <Item>
-            <Input placeholder='Username' name='name' onChangeText={ (name) => { this.setState({ name })} } />
-          </Item>
-          <Item>
             <Input placeholder='Email' name='email' onChangeText={ (email) => { this.setState({ email })} } />
           </Item>
           <Item>
             <Input placeholder='Password' name='password' onChangeText={ (password) => { this.setState({ password })} } />
           </Item>
-          <Button block success style={{margin: 20}} onPress={ () => { this.registerUser() } }>
-            <Text>Register</Text>
+          <Button block success style={{margin: 20, backgroundColor: '#AFBCA1'}} onPress={ () => { this.registerUser() } }>
+            <Text>Log In</Text>
           </Button>
         </Form>
       </View>
