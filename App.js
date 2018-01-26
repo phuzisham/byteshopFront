@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import { Container, Header, Title, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base';
+import Registration from './components/registration.js';
+import Login from './components/login.js';
 
-import UserRegistration from './components/registrations/UserRegistration';
-
-export default class App extends Component {
+export default class AnatomyExample extends Component {
   render() {
     return (
-      <Container>
-        <Header>
+      <Container style={{backgroundColor: '#332c30'}}>
+        <Header style={{backgroundColor: '#9A8F56'}}>
           <Left>
             <Button transparent>
-              <Icon name='menu' />
+              <Icon name='menu' style={{color: '#E4633D'}} />
             </Button>
           </Left>
           <Body>
@@ -19,12 +19,14 @@ export default class App extends Component {
           <Right />
         </Header>
 
-        <UserRegistration />
+        <Content>
+          <Login />
+        </Content>
 
-        <Footer>
+        <Footer style={{backgroundColor: '#9A8F56'}}>
           <FooterTab>
             <Button full>
-              <Text>Sign Up</Text>
+              <Text style={{color: '#E4633D'}}>Home</Text>
             </Button>
           </FooterTab>
         </Footer>
