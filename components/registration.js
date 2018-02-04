@@ -34,13 +34,6 @@ export default class Registration extends Component {
     });
   }
 
-  handleChange = (event) => {
-    console.log('event.nativeEvent =>', event.nativeEvent);
-    this.setState({
-      [event.nativeEvent.target.name]: event.nativeEvent.text
-    })
-  }
-
   render() {
     return (
       <View>
@@ -54,7 +47,7 @@ export default class Registration extends Component {
             <Input placeholder='Email' name='email' onChangeText={ (email) => { this.setState({ email })} } />
           </Item>
           <Item>
-            <Input placeholder='Password' name='password' onChangeText={ (password) => { this.setState({ password })} } />
+            <Input secureTextEntry={true} placeholder='Password' name='password' onChangeText={ (password) => { this.setState({ password })} } />
           </Item>
           <Button block success style={{margin: 20}} onPress={ () => { this.registerUser() } }>
             <Text>Register</Text>
