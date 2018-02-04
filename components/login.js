@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image } from 'react-native';
+import { AppRegistry, Image } from 'react-native';
 import { Button, Text, Form, Item, Input, View } from 'native-base';
 
 export default class Login extends Component {
@@ -15,7 +15,7 @@ export default class Login extends Component {
   registerUser = () => {
     console.log('this.state =>', this.state);
 
-    fetch('http://192.168.1.111:3000/api/auth/sign_in', {
+    fetch('http://10.0.0.123:3000/api/auth/sign_in', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -32,13 +32,6 @@ export default class Login extends Component {
     });
   }
 
-  handleChange = (event) => {
-    console.log('event.nativeEvent =>', event.nativeEvent);
-    this.setState({
-      [event.nativeEvent.target.name]: event.nativeEvent.text
-    })
-  }
-
   render() {
     return (
       <View>
@@ -49,7 +42,7 @@ export default class Login extends Component {
             <Input placeholder='Email' name='email' onChangeText={ (email) => { this.setState({ email })} } />
           </Item>
           <Item>
-            <Input placeholder='Password' name='password' onChangeText={ (password) => { this.setState({ password })} } />
+            <Input secureTextEntry={true} placeholder='Password' name='password' onChangeText={ (password) => { this.setState({ password })} } />
           </Item>
           <Button block success style={{margin: 20, backgroundColor: '#AFBCA1'}} onPress={ () => { this.registerUser() } }>
             <Text>Log In</Text>
@@ -59,3 +52,5 @@ export default class Login extends Component {
     );
   }
 }
+
+AppRegistry.registerComponent('Login', () => Login);
