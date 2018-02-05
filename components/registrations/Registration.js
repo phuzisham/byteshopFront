@@ -37,7 +37,7 @@ export default class Registration extends Component {
   render() {
     return (
       <View>
-        <Image source={require('../img/carts.jpg')} style={{height: 200, width: null, flex: 1}} />
+        <Image source={require('../../img/carts.jpg')} style={{height: 200, width: null, flex: 1}} />
 
         <Form>
           <Item>
